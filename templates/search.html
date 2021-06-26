@@ -1,0 +1,152 @@
+ <!-- {% load static %}
+{% static 'images' as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style1.css' %}"> 
+   
+</head>
+<body>
+    
+    <form  action="search" method="POST">
+        {% csrf_token %}
+             <div class="search">
+                <input style="width: 300px" type="text" name="Search" placeholder="search.."><br>
+                <button  type="submit">Search</button>
+            </div> -->
+            <!-- {% for det in dets %}
+        <div class="container">   
+            <div class="row">
+                <div class="column">
+                        <img class="gallery" src="{{det.img.url}}" alt="property" style="width:450px">
+                    <div>
+                        <div class="location">{{det.location}}</div>
+                        <div class="desc">{{det.desc}}</div>
+                        <div class="contact">{{det.contact}}</div>
+                    
+                        <button type="submit">DETAILS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+        
+        
+    </form>
+    
+    
+</body>
+</html>
+ --> 
+
+
+{% load static %}
+{% static 'images' as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+   
+    
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/style2.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/lightslider.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+  <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'GET http://127.0.0.1:8000/static/styles/bootstrap4/bootstrap.min.css net::ERR_ABORTED 404 (Not Found)plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+
+   <!-- <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+   <script type="text/javascript" src="{% static 'js/lightslider.js' %}"></script> -->
+
+     
+
+</head>
+<body>
+  <!-- <form action="{% url 'search' %}" method="get">
+    <input type="text" name="search"/>
+    <button type="submit">Search</button>
+  </form> -->
+  
+  <ul id="autoWidth" class="cs- hidden">
+    
+    {% for i in city %}
+    <li class="item-a ">
+      <form class="container" method="get" action="/search">
+        {% csrf_token %}
+      
+      <div class="img"><img src="{{i.img.url}}">
+        
+          <div class="overlay">
+            <a href="detail/{{i.id}}" class="btn">Detail</a>
+            
+          </div>
+        
+      </div>
+     
+      <div class="loc">{{i.location}}</div>
+
+      
+
+      
+      </form>
+    </li>
+    {% endfor %}
+
+    <!-- <li class="item-b">
+      <form class="container">
+        {% csrf_token %}
+      <div class="img"><img src="{% static 'images/p01.jpg' %}">
+          <div class="overlay">
+            <a href="#" class="btn">Details</a>
+          </div>
+      </div>
+      <div class="loc">Kolkata</div>
+      </form>
+    </li>
+
+    <li class="item-c">
+      <form class="container">
+        {% csrf_token %}
+      <div class="img"><img src="{% static 'images/p02.jpg' %}">
+          <div class="overlay">
+            <a href="#" class="btn">Details</a>
+          </div>
+      </div>
+      <div class="loc">Uttarakhand</div>
+      </form>
+    </li> -->
+
+    
+    
+  
+  </ul>
+  
+  
+  <!-- </section> -->
+    
+
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>
+
